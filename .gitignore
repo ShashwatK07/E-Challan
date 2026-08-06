@@ -1,9 +1,0 @@
-# Root workspace gitignore
-*.log
-.DS_Store
-Thumbs.db
-.env
-.env.*
-!.env.example
-*.tmp
-*.bak
