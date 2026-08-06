@@ -1,1 +1,1 @@
-# E-Challan
+A Go implementation of the DIGIT Municipal E-Challan Service module for managing e-challan systems and related workflows.
