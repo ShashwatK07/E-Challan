@@ -1,5 +1,10 @@
-# Root workspace gitignore
+# Logs
 *.log
+
+# Coverage
+coverage.out
+*.out
+
 .DS_Store
 Thumbs.db
 .env

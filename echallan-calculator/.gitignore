@@ -1,21 +1,18 @@
-# Compiled binaries
-echallan-services
-echallan-calculator
-echallan-main
+# Compiled binaries (root-level only)
+/echallan-calculator
 *.exe
-*.out
 
 # Build artifacts
 *.o
 *.a
 *.so
 
-# Go test & coverage
-coverage.out
-coverage.html
-
-# Log files
+# Logs
 *.log
+
+# Coverage
+coverage.out
+*.out
 
 # Environment files
 .env
