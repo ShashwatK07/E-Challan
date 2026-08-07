@@ -1,0 +1,318 @@
+{
+  "info": {
+    "name": "DIGIT eChallan Go API Collection",
+    "description": "Postman collection for the Go implementation of DIGIT eChallan Services and eChallan Calculator.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "eChallan Services",
+      "item": [
+        {
+          "name": "Create Challan",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"RequestInfo\": {\n    \"apiId\": \"echallan\",\n    \"ver\": \"1.0\",\n    \"ts\": 1672531200000,\n    \"action\": \"_create\",\n    \"msgId\": \"msg-123\"\n  },\n  \"challan\": {\n    \"tenantId\": \"pb.amritsar\",\n    \"businessService\": \"echallan\",\n    \"applicationStatus\": \"ACTIVE\",\n    \"citizen\": {\n      \"name\": \"John Doe\",\n      \"mobileNumber\": \"9999999999\",\n      \"tenantId\": \"pb\"\n    },\n    \"amount\": [\n      {\n        \"taxHeadCode\": \"CHALLAN_FEE\",\n        \"amount\": 100.0\n      }\n    ],\n    \"taxPeriodFrom\": 1672531200000,\n    \"taxPeriodTo\": 1704067200000\n  }\n}"
+            },
+            "url": {
+              "raw": "{{host}}/eChallan/v1/_create",
+              "protocol": "http",
+              "host": [
+                "{{host}}"
+              ],
+              "port": "8082",
+              "path": [
+                "eChallan",
+                "v1",
+                "_create"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{jwt_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search Challans",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"RequestInfo\": {\n    \"apiId\": \"echallan\",\n    \"ver\": \"1.0\",\n    \"ts\": 1672531200000,\n    \"action\": \"_search\",\n    \"msgId\": \"msg-123\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{host}}/eChallan/v1/_search?tenantId=pb.amritsar",
+              "protocol": "http",
+              "host": [
+                "{{host}}"
+              ],
+              "port": "8082",
+              "path": [
+                "eChallan",
+                "v1",
+                "_search"
+              ],
+              "query": [
+                {
+                  "key": "tenantId",
+                  "value": "pb.amritsar"
+                },
+                {
+                  "key": "ids",
+                  "value": "example",
+                  "disabled": true
+                },
+                {
+                  "key": "challanNo",
+                  "value": "example",
+                  "disabled": true
+                },
+                {
+                  "key": "accountId",
+                  "value": "example",
+                  "disabled": true
+                },
+                {
+                  "key": "mobileNumber",
+                  "value": "example",
+                  "disabled": true
+                },
+                {
+                  "key": "businessService",
+                  "value": "example",
+                  "disabled": true
+                },
+                {
+                  "key": "status",
+                  "value": "example",
+                  "disabled": true
+                },
+                {
+                  "key": "receiptNumber",
+                  "value": "example",
+                  "disabled": true
+                },
+                {
+                  "key": "offset",
+                  "value": "example",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "example",
+                  "disabled": true
+                }
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{jwt_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Challan",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"RequestInfo\": {\n    \"apiId\": \"echallan\",\n    \"ver\": \"1.0\",\n    \"ts\": 1672531200000,\n    \"action\": \"_update\",\n    \"msgId\": \"msg-123\"\n  },\n  \"challan\": {\n    \"tenantId\": \"pb.amritsar\",\n    \"businessService\": \"echallan\",\n    \"challanNo\": \"CH-2023-10-10-0001\",\n    \"applicationStatus\": \"CANCELLED\",\n    \"amount\": [\n      {\n        \"taxHeadCode\": \"CHALLAN_FEE\",\n        \"amount\": 100.0\n      }\n    ],\n    \"taxPeriodFrom\": 1672531200000,\n    \"taxPeriodTo\": 1704067200000\n  }\n}"
+            },
+            "url": {
+              "raw": "{{host}}/eChallan/v1/_update",
+              "protocol": "http",
+              "host": [
+                "{{host}}"
+              ],
+              "port": "8082",
+              "path": [
+                "eChallan",
+                "v1",
+                "_update"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{jwt_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Count Challans",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"RequestInfo\": {\n    \"apiId\": \"echallan\",\n    \"ver\": \"1.0\",\n    \"ts\": 1672531200000,\n    \"action\": \"_count\",\n    \"msgId\": \"msg-123\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{host}}/eChallan/v1/_count?tenantId=pb.amritsar",
+              "protocol": "http",
+              "host": [
+                "{{host}}"
+              ],
+              "port": "8082",
+              "path": [
+                "eChallan",
+                "v1",
+                "_count"
+              ],
+              "query": [
+                {
+                  "key": "tenantId",
+                  "value": "pb.amritsar"
+                }
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{jwt_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "eChallan Calculator",
+      "item": [
+        {
+          "name": "Calculate Demands",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"RequestInfo\": {\n    \"apiId\": \"echallan\",\n    \"ver\": \"1.0\",\n    \"ts\": 1672531200000,\n    \"action\": \"_calculate\",\n    \"msgId\": \"msg-123\"\n  },\n  \"CalulationCriteria\": [\n    {\n      \"tenantId\": \"pb.amritsar\",\n      \"challan\": {\n        \"tenantId\": \"pb.amritsar\",\n        \"businessService\": \"echallan\",\n        \"challanNo\": \"CH-2023-10-10-0001\",\n        \"amount\": [\n          {\n            \"taxHeadCode\": \"CHALLAN_FEE\",\n            \"amount\": 100.0\n          }\n        ],\n        \"taxPeriodFrom\": 1672531200000,\n        \"taxPeriodTo\": 1704067200000\n      }\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{calc_host}}/echallan-calculator/v1/_calculate",
+              "protocol": "http",
+              "host": [
+                "{{calc_host}}"
+              ],
+              "port": "8078",
+              "path": [
+                "echallan-calculator",
+                "v1",
+                "_calculate"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{jwt_token}}",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{jwt_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "host",
+      "value": "http://localhost:8082",
+      "type": "string"
+    },
+    {
+      "key": "calc_host",
+      "value": "http://localhost:8078",
+      "type": "string"
+    },
+    {
+      "key": "jwt_token",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
