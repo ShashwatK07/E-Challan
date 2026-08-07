@@ -1,0 +1,14 @@
+# Logs
+*.log
+
+# Coverage
+coverage.out
+*.out
+
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+*.tmp
+*.bak

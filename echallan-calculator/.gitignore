@@ -1,0 +1,36 @@
+# Compiled binaries (root-level only)
+/echallan-calculator
+*.exe
+
+# Build artifacts
+*.o
+*.a
+*.so
+
+# Logs
+*.log
+
+# Coverage
+coverage.out
+*.out
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# IDE / OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Go vendor directory
+vendor/
+
+# Temp files
+*.tmp
+*.bak
